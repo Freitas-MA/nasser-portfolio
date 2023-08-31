@@ -4,7 +4,6 @@ import ImgBackground from "../../assets/background.png";
 export const StyledHome = styled.div`
   position: relative;
   display: block;
-  height: 110vh;
   width: 100%;
   margin: 0 auto;
 

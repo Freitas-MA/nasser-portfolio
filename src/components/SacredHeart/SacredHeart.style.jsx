@@ -5,7 +5,7 @@ const { colors, fontSize, layout } = Theme
 
 export const StyledSacredHeart = styled.div`
     width: 100%;
-    height: 90vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,13 +35,13 @@ export const StyledSacredHeart = styled.div`
             padding: 1.5rem;
             padding-top: 5rem;
             width: 100%;
-            height: 100%;
+            height: max-content;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: start;
 
             & > p {
+                height: 100%;
                 font-size: ${fontSize.small};
                 line-height: 1.5rem;
                 margin-bottom: 1rem;

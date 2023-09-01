@@ -19,7 +19,6 @@ export const MessageStyled = styled.section`
 
   & > div {
     background-color: ${colors.backgroundPrimary};
-    min-height: 80%;
     height: max-content;
     min-width: 350px;
     max-width: 850px;
@@ -38,5 +37,4 @@ export const MessageStyled = styled.section`
     line-height: 1.5;
     margin-bottom: 0.5rem;
   }
-  
 `;

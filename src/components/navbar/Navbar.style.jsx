@@ -1,44 +1,50 @@
-import { styled } from 'styled-components'
-import { Theme } from '../../theme/theme'
+import { styled } from "styled-components";
+import { Theme } from "../../theme/theme";
 
-const { colors, layout } = Theme
+const { colors, layout } = Theme;
 export const StyledNavbar = styled.nav`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 5vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  color: ${colors.textPrimary};
+  z-index: 999;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+  & > section {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0 2rem;
-    height: 5vh;
+    max-width: ${layout.maxWidth};
     width: 100%;
-    position: fixed;
-    top: 0;
-    color: ${colors.textPrimary};
-    z-index: 999;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
-    & > section {
+    height: 100%;
+
+    & > div {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+
+      & > a {
         display: flex;
-        max-width: ${layout.maxWidth};
-        width: 100%;
-        height: 100%;
-        
-        & > div {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: start;
-            
-               & > img{ 
-                    max-width: 95%;
-                    max-height: 95%;
-                    margin: 10px;
-                    border-radius: 50%;
-                    
-                }
-            }
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: ${colors.textPrimary};
+        & > img {
+          width: 50px;
+          max-width: 95%;
+          max-height: 95%;
+          margin: 10px;
+          border-radius: 50%;
         }
-    
-`
+      }
+    }
+  }
+`;
 
 export const StyledNavbarList = styled.ul`
     display: flex;
@@ -66,4 +72,4 @@ export const StyledNavbarList = styled.ul`
             transform: scale(1.1);
             transition: all 0.2s ease-in-out;
         }
-`
+`;

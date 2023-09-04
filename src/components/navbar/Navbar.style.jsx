@@ -33,7 +33,6 @@ export const StyledNavbar = styled.nav`
         align-items: center;
         justify-content: center;
         text-decoration: none;
-        color: ${colors.textPrimary};
         & > img {
           width: 50px;
           max-width: 95%;

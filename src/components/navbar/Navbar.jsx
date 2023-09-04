@@ -44,7 +44,9 @@ const Navbar = () => {
             <li>
               <Link to="/">Home</Link>
             </li>
-            <li>Beatriz Freitas</li>
+            <li>
+              <Link to="/beatriz-freitas">Beatriz Freitas</Link>
+            </li>
             <ConsultasLink />
             <li>
               <Link to="/contact">Contato</Link>

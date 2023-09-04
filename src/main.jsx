@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import { Home, Contact, Error404 } from './pages/index'
+import { Home, Contact, BeatrizFreitas, Error404 } from './pages/index'
 
 import {
   createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
@@ -13,6 +13,7 @@ const router = createBrowserRouter([
     errorElement: <Error404/>,
     children: [
       { path: '/', element: <Home/> },
+      { path: '/beatriz-freitas', element: <BeatrizFreitas/> },
       { path: '/contact', element: <Contact/> },
     ]
   },

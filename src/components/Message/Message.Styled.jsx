@@ -12,7 +12,6 @@ export const MessageStyled = styled.section`
   justify-content: center;
   min-height: 100vh;
   width: 100%;
-  border: 1px solid ${colors.primary};
   height: max-content;
   margin-bottom: 2rem;
   padding: ${layout.padding};

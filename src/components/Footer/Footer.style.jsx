@@ -13,13 +13,15 @@ export const FooterContainer = styled.div`
     text-align: center;
     font-size: 1rem;
     padding: 0.5rem;
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
 
     & > div {
-        border: 1px solid blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
         margin: 0.5rem;
         width: 100%;
     }

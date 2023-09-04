@@ -1,18 +1,39 @@
-import React from 'react'
-import { FooterContainer } from './Footer.style'
+import React from "react";
+import { FooterContainer } from "./Footer.style";
+import { SocialIcon } from "react-social-icons";
 
 export default function Footer() {
   return (
     <FooterContainer>
-        <div>
-            div 1
-        </div>
-        <div>
-            div 2
-        </div>
-        <div>
-            div 3
-        </div>
+      <div>
+        <span>Space Nas´Ser @ 2021</span>
+      
+        <SocialIcon
+          style={{ height: 25, width: 25, margin: 5 }}
+          url="https://www.instagram.com/space_nasser/"
+          target="_blank"
+        />
+        <SocialIcon
+          style={{ height: 25, width: 25, margin: 5 }}
+          url="https://www.facebook.com/space.nasser"
+          target="_blank"
+        />
+      </div>
+      <div>
+        <span>
+          Designed by <strong>Freitas-MA</strong>
+        </span>
+        <SocialIcon
+          style={{ height: 25, width: 25, margin: 5 }}
+          url="https://portfolio-sepia-eight-67.vercel.app/"
+          target="_blank"
+        />
+        <SocialIcon
+          style={{ height: 25, width: 25, margin: 5 }}
+          url="https://github.com/Freitas-MA"
+          target="_blank"
+        />
+      </div>
     </FooterContainer>
-  )
+  );
 }

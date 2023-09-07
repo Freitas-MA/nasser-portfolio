@@ -6,7 +6,7 @@ This project is located in `D:\nasser` and contains the following files:
 - `index.html`: The main HTML file that loads the React app.
 - `index.jsx`: The entry point for the React app.
 - `App.jsx`: The main component of the React app.
-- `styles.css`: The CSS file for styling the React app.
+- `styles.jsx`: To main style Styled-Components is used to build interactive CSS styles.
 
 ### Dependencies
 

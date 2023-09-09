@@ -8,14 +8,16 @@ export const FooterContainer = styled.div`
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: ${colors.shadowsColor};
+    background-color: ${colors.backgroundPrimary};
     color: ${colors.textSecondary};
     text-align: center;
     font-size: 1rem;
     padding: 0.5rem;
+    padding-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 999;
 
     & > div {
         display: flex;

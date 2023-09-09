@@ -6,6 +6,7 @@ export const Theme = {
     textPrimary: 'rgb(104, 98, 48)',
     textSecondary: 'rgb(180, 170, 83)',
     textTertiary: 'rgb(255, 255, 255)',
+    textQuaternary: 'rgb(128,128,128)',
   },
   fontSize: {
     xSmall: '0.8rem',

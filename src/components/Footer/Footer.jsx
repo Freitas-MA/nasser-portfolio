@@ -9,29 +9,35 @@ export default function Footer() {
         <span>Space Nas´Ser @ 2021</span>
       
         <SocialIcon
-          style={{ height: 25, width: 25, margin: 5 }}
           url="https://www.instagram.com/space_nasser/"
           target="_blank"
+          style={{ height: 25, width: 25, margin: 5, filter: 'grayscale(100%)' }}
         />
         <SocialIcon
-          style={{ height: 25, width: 25, margin: 5 }}
           url="https://www.facebook.com/space.nasser"
           target="_blank"
+          style={{ height: 25, width: 25, margin: 5, filter: 'grayscale(100%)' }}
         />
+        <SocialIcon
+          url="https://t.me/space_nasser"
+          target="_blank"
+          style={{ height: 25, width: 25, margin: 5, filter: 'grayscale(100%)' }}
+        />
+        {/*  */}
       </div>
       <div>
         <span>
           Designed by <strong>Freitas-MA</strong>
         </span>
         <SocialIcon
-          style={{ height: 25, width: 25, margin: 5 }}
           url="https://portfolio-sepia-eight-67.vercel.app/"
           target="_blank"
+          style={{ height: 25, width: 25, margin: 5, filter: 'grayscale(100%)' }}
         />
         <SocialIcon
-          style={{ height: 25, width: 25, margin: 5 }}
           url="https://github.com/Freitas-MA"
           target="_blank"
+          style={{ height: 25, width: 25, margin: 5, filter: 'grayscale(100%)' }}
         />
       </div>
     </FooterContainer>

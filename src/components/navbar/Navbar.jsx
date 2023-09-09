@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyledNavbar, StyledNavbarList } from "./Navbar.style.jsx";
-import ConsultasLink from "./ConsultasLink.jsx";
+import ConsultasLink from "./ConsultasLink/ConsultasLink.jsx";
 import ImgBackground from "../../assets/Logo/2-removebg-preview.png";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { Theme } from "../../theme/theme.jsx";
@@ -30,11 +30,20 @@ const Navbar = () => {
     cursor: "pointer",
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <StyledNavbar style={navbarStyle}>
       <section>
         <div>
-        <Link id="innerLink" to="/">
+        <Link
+        onClick={scrollToTop}
+        id="innerLink" to="/">
           <img id="logoNasser" src={ImgBackground} alt="Nas´Ser" style={LogoStyle} />
           <p>Nas´Ser</p>
         </Link>
@@ -42,14 +51,22 @@ const Navbar = () => {
         <div>
           <StyledNavbarList>
             <li>
-              <Link to="/">Home</Link>
+              <Link
+              onClick={scrollToTop}
+              to="/">Home</Link>
             </li>
             <li>
-              <Link to="/beatriz-freitas">Beatriz Freitas</Link>
+              <Link
+              onClick={scrollToTop}
+              to="/beatriz-freitas">Beatriz Freitas</Link>
             </li>
             <ConsultasLink />
             <li>
-              <Link to="/contact">Contato</Link>
+              <Link
+              onClick={scrollToTop}
+              
+              preventScrollReset= "true"
+              to="/contact">Contato</Link>
             </li>
           </StyledNavbarList>
         </div>

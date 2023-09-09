@@ -1,8 +1,21 @@
 import React from "react";
 import { BeatrizFreitasStyled } from "./BeatrizFreitas.style";
 import { motion } from "framer-motion";
+import {
+  beatrizProfile,
+  beatrizAbout,
+  messageProfile,
+} from "../../Objects.API/Beatriz.Freitas";
 
 export default function BeatrizFreitas() {
+  const { photo, title } = beatrizProfile;
+  const { aboutTitle, aboutText } = beatrizAbout;
+  const { message, author } = messageProfile;
+
+  const paragraphs = aboutText
+    .split("\n")
+    .map((paragraph, index) => <p key={index}>{paragraph}</p>);
+
   return (
     <BeatrizFreitasStyled>
       <div id="background" />
@@ -13,11 +26,23 @@ export default function BeatrizFreitas() {
       >
         <h1>Beatriz Freitas</h1>
         <div>
-          <div></div>
-          <div></div>
+          <div>
+            <img src={photo} alt={title} />
+          </div>
+          <div id="beatrizProfile">
+            <h2>{aboutTitle}</h2>
+            {paragraphs}
+          </div>
+        </div>
+        <div id="messageProfile">
+          <div>
+            <p>
+              <strong>{message}</strong>
+            </p>
+            <p>{author}</p>
+          </div>
         </div>
       </motion.section>
     </BeatrizFreitasStyled>
   );
 }
-// ! Just adding a comment to test git

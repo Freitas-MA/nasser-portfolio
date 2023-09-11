@@ -11,7 +11,6 @@ export default function SacredHeart() {
     .map((paragraph) => `<p>${paragraph}</p>`)
     .join("");
 
-  console.log(paragraphs);
 
   return (
     <StyledSacredHeart>

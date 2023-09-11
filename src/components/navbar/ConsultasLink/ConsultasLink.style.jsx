@@ -3,7 +3,7 @@ import { Theme } from "../../../theme/theme";
 
 const { colors } = Theme;
 
-export const ConsultasLinkStyle = styled.div`
+export const ConsultasLinkStyle = styled.li`
     display: flex;
     position: relative;
     align-items: center;
@@ -24,9 +24,9 @@ export const ConsultasLinkStyle = styled.div`
         display: none;
         position: absolute;
         top: 60px;
-        left: 15px;
-        width: 10vw;
-        height: 20vh;
+        left: 0px;
+        width: auto;
+        height: auto;
         overflow: hidden;
         transition: height 0.5s ease-in-out;
         z-index: 1;
@@ -39,7 +39,7 @@ export const ConsultasLinkStyle = styled.div`
         & ul {
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
+            justify-content: space-around;
             align-items: center;
             width: 100%;
             height: 100%;
@@ -53,6 +53,7 @@ export const ConsultasLinkStyle = styled.div`
             & li {
                 width: 100%;
                 height: 100%;
+                padding: 0 1rem;
                 transition: background-color 0.5s ease-in-out;
                 border-radius: 5px;
                 background-color: ${colors.backgroundPrimary};

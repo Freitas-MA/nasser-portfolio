@@ -43,6 +43,38 @@ export const StyledNavbar = styled.nav`
       }
     }
   }
+  & #floatMenu {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    & ul {
+      display: none;
+    }
+    & #checkbox {
+      display: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      right: 1rem;
+      cursor: pointer;
+    }
+    & #floatMenu:checked {
+      & ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+      }
+      
+      }
+    }
+  }
 `;
 
 export const StyledNavbarList = styled.ul`
@@ -71,4 +103,9 @@ export const StyledNavbarList = styled.ul`
             transform: scale(1.1);
             transition: all 0.2s ease-in-out;
         }
+
+       
+
+
+
 `;

@@ -69,6 +69,12 @@ const Navbar = () => {
               to="/contact">Contato</Link>
             </li>
           </StyledNavbarList>
+          <div>
+            <label id="checkbox" htmlFor='floatMenu'>
+              &#9776;
+            </label>
+            <input type="checkbox" id="floatMenu"/>
+          </div>
         </div>
       </section>
     </StyledNavbar>

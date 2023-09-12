@@ -49,7 +49,7 @@ const Navbar = () => {
         </Link>
         </div>
         <div>
-          <StyledNavbarList>
+          <StyledNavbarList id="menu">
             <li>
               <Link
               onClick={scrollToTop}

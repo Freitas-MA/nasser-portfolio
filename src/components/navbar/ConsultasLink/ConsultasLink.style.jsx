@@ -23,7 +23,7 @@ export const ConsultasLinkStyle = styled.li`
     & #subMenu {
         display: none;
         position: absolute;
-        top: 60px;
+        top: 47px;
         left: 0px;
         width: auto;
         height: auto;
@@ -36,7 +36,7 @@ export const ConsultasLinkStyle = styled.li`
             display: flex;
         }
         
-        & ul {
+        & > ul {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -68,5 +68,21 @@ export const ConsultasLinkStyle = styled.li`
 
         }
     }
+   
 
+    // @media (max-width: 768px) {
+    //     & #subMenu {
+    //         & > ul {
+    //             display: flex;
+    //             flex-direction: column;
+    //             justify-content: space-around;
+    //             align-items: center;
+    //             width: 100%;
+    //             height: 100%;
+    //             list-style: none;
+    //             padding: 0;
+    //             margin: 0;
+    //         }
+    //     }
+   
 `;

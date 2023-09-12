@@ -1,11 +1,27 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import { ConsultasLinkStyle } from "./ConsultasLink.style";
 
-export default function ConsultasLink() {
+const ConsultasLink = () => {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  const getScreenWidth = () => {
+    setScreenWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', getScreenWidth);
+    return () => {
+      window.removeEventListener('resize', getScreenWidth);
+    };
+  }, []);
+
+  console.log(screenWidth);
+  
   return (
     <ConsultasLinkStyle>
-        Consultas <AiOutlineArrowDown />
+        <span>Consultas <AiOutlineArrowDown /></span>
         <div id="subMenu">
           <ul>
             <li>Leitura de Aura</li>
@@ -17,3 +33,5 @@ export default function ConsultasLink() {
     </ConsultasLinkStyle>
   );
 }
+
+export default ConsultasLink;

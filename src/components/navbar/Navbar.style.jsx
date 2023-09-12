@@ -43,13 +43,26 @@ export const StyledNavbar = styled.nav`
       }
     }
   }
-  & #floatMenu {
+  & #floatMenu, #checkbox {
     display: none;
   }
   @media (max-width: 768px) {
-    & ul {
-      display: none;
-    }
+    & #menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: start;
+      position: absolute;
+      top: 0rem;
+      right: 0;
+      margin-top: 1.7rem;
+      opacity: 0.9;
+      width: 100%;
+      height: 95vh;
+      background-color: ${colors.backgroundPrimary};
+      list-style: none;
+      color: ${colors.textPrimary};
+  }
     & #checkbox {
       display: none;
       display: flex;
@@ -63,6 +76,11 @@ export const StyledNavbar = styled.nav`
     }
     & #floatMenu:checked {
       & ul {
+        position: float;
+        display: flex;
+        top: 0;
+        right: 0;
+        z-index: 999;
         display: flex;
         flex-direction: column;
         justify-content: center;

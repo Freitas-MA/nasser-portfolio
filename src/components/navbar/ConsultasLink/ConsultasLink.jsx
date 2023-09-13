@@ -35,8 +35,3 @@ const ConsultasLink = () => {
 }
 
 export default ConsultasLink;
-
-
-
-
-// !  

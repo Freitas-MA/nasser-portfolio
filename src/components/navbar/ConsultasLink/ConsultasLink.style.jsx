@@ -1,7 +1,16 @@
-import { styled } from "styled-components";
+import { styled, keyframes } from "styled-components";
 import { Theme } from "../../../theme/theme";
 
 const { colors } = Theme;
+
+const bounce = keyframes`
+  0%, 100% {
+    transform: translateY(5);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+`;
 
 export const ConsultasLinkStyle = styled.li`
     display: flex;
@@ -12,9 +21,16 @@ export const ConsultasLinkStyle = styled.li`
     height: 60px;
     gap: 10px;
 
+    & #arrowSymbol {
+        transform: translateY(2px);
+    }
+
     &:hover {
         cursor: pointer;
-
+        
+        & #arrowSymbol {
+            animation: ${bounce} 1s ease-in-out infinite alternate;
+        }
         & #subMenu {
             display: flex;
         }
@@ -23,10 +39,11 @@ export const ConsultasLinkStyle = styled.li`
     & #subMenu {
         display: none;
         position: absolute;
-        top: 47px;
+        top: 35px;
         left: 0px;
         width: auto;
         height: auto;
+        padding-top: 10px;
         overflow: hidden;
         transition: height 0.5s ease-in-out;
         z-index: 1;

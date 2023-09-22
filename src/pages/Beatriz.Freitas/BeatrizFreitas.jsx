@@ -26,7 +26,7 @@ export default function BeatrizFreitas() {
       >
         <h1>Beatriz Freitas</h1>
         <div>
-          <div>
+          <div id="beatrizPicture">
             <img src={photo} alt={title} />
           </div>
           <div id="beatrizProfile">

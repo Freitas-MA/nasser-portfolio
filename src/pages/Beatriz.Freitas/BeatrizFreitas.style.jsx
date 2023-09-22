@@ -17,6 +17,7 @@ export const BeatrizFreitasStyled = styled.section`
     & > section {
         display: block;
         width: 100%;
+        height: 100%;
         margin-top: 10rem;
 
         
@@ -24,7 +25,7 @@ export const BeatrizFreitasStyled = styled.section`
             display: grid;
             grid-template-columns: ${layout.gridTemplateColumns};
             gap: 2rem;
-            align-items: center;
+            align-items: start;
             justify-items: center;
             min-height: 100vh;
             background-color: ${colors.backgroundPrimary};
@@ -50,11 +51,23 @@ export const BeatrizFreitasStyled = styled.section`
                 
             }
         }
-
-        & #beatrizProfile {
+        & #beatrizPicture {
             display: flex;
             flex-direction: column;
             gap: 2rem;
+            align-items: center;
+            min-height: 100vh;
+
+            & > img {
+                width: 80%;
+                height: auto;
+                border-radius: 10px;
+            }
+        }
+        & #beatrizProfile {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
             align-items: start;
             justify-content: center;
             min-height: 100vh;
@@ -63,14 +76,12 @@ export const BeatrizFreitasStyled = styled.section`
                 font-size: ${fontSize.xLarge};
                 color: ${colors.textPrimary};
                 text-align: center;
-                margin-bottom: 2rem;
             }
 
             & > p {
                 font-size: ${fontSize.medium};
                 color: ${colors.textPrimary};
                 text-align: start;
-                padding: 0 2rem;
             }
         }
 
@@ -114,8 +125,7 @@ export const BeatrizFreitasStyled = styled.section`
             font-size: ${fontSize.xxLarge};
             color: ${colors.textPrimary};
             text-align: center;
-            margin-bottom: 2rem;
-            padding-top: 5rem;
+            margin-bottom: 3rem;
             height: 40vh;
             }
     }

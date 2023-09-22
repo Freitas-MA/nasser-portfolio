@@ -21,7 +21,7 @@ const ConsultasLink = () => {
   
   return (
     <ConsultasLinkStyle>
-        <span>Consultas <AiOutlineArrowDown /></span>
+        <span>Consultas <AiOutlineArrowDown id="arrowSymbol"/></span>
         <div id="subMenu">
           <ul>
             <li>Leitura de Aura</li>

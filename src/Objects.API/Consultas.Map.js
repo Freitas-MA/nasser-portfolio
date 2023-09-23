@@ -1,3 +1,8 @@
+import ConstelaçõesFamiliares from "../assets/consultas/ConstecoesFamiliares.jpeg";
+import LeituraDeAura from "../assets/consultas/LeituraAura.jpeg";
+import ProgramaReNasSer from "../assets/consultas/ReNaSer.jpeg";
+import Reiki from "../assets/consultas/reiki.jpeg";
+
 export const ConsultasMap = [
   {
     id: "1",
@@ -17,7 +22,7 @@ export const ConsultasMap = [
     
     Atendimento presencial ou online.
     `,
-    image: "url",
+    image: {LeituraDeAura},
     link: "url",
   },
   {
@@ -54,7 +59,7 @@ export const ConsultasMap = [
 
     Atendimento presencial e online. (individual e grupo)
     `,
-    image: "url",
+    image: {ConstelaçõesFamiliares},
     link: "url",
   },
   {
@@ -79,7 +84,7 @@ export const ConsultasMap = [
 
     Atendimento presencial.
     `,
-    image: "url",
+    image: {Reiki},
     link: "url",
   },
   {
@@ -103,7 +108,7 @@ export const ConsultasMap = [
 
     Vamos mergulhar juntos nesta jornada?
     `,
-    image: "url",
+    image: {ProgramaReNasSer},
     link: "url",
   },
 ];

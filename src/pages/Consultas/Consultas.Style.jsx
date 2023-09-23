@@ -15,18 +15,18 @@ export const ConsultasStyle = styled.div`
     margin: 10px;
     width: 350px;
     height: 350px;
+    padding: 10px;
     border: 1px solid black;
-  }
+    overflow: hidden;
 
-  @media (max-width: 1200px) {
-    & > div {
-        width: 350px;
+    & > h3 {
+      text-align: center;
     }
-  }
 
-  @media (max-width: 768px) {
-    & > div {
-        width: 350px;
-    }
+    & > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
   }
 `;

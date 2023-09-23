@@ -1,7 +1,7 @@
-import ConstelaçõesFamiliares from "../assets/consultas/ConstecoesFamiliares.jpeg";
-import LeituraDeAura from "../assets/consultas/LeituraAura.jpeg";
-import ProgramaReNasSer from "../assets/consultas/ReNaSer.jpeg";
-import Reiki from "../assets/consultas/reiki.jpeg";
+const constelacoesFamiliares = 'https://i.ibb.co/QFxwg4c/Constecoes-Familiares.jpg'
+const leituraAura = 'https://i.ibb.co/K98T68p/Leitura-Aura.jpg'
+const reiki = 'https://i.ibb.co/2cTzPpW/Reiki.jpg'
+const Renasser = 'https://i.ibb.co/m0GhF4r/ReNaSer.jpg'
 
 export const ConsultasMap = [
   {
@@ -22,7 +22,7 @@ export const ConsultasMap = [
     
     Atendimento presencial ou online.
     `,
-    image: {LeituraDeAura},
+    image: {leituraAura},
     link: "url",
   },
   {
@@ -59,7 +59,7 @@ export const ConsultasMap = [
 
     Atendimento presencial e online. (individual e grupo)
     `,
-    image: {ConstelaçõesFamiliares},
+    image: {constelacoesFamiliares},
     link: "url",
   },
   {
@@ -84,7 +84,7 @@ export const ConsultasMap = [
 
     Atendimento presencial.
     `,
-    image: {Reiki},
+    image: {reiki},
     link: "url",
   },
   {
@@ -108,7 +108,7 @@ export const ConsultasMap = [
 
     Vamos mergulhar juntos nesta jornada?
     `,
-    image: {ProgramaReNasSer},
+    image: {Renasser},
     link: "url",
   },
 ];

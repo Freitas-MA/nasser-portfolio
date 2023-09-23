@@ -22,7 +22,7 @@ export const ConsultasMap = [
     
     Atendimento presencial ou online.
     `,
-    image: {leituraAura},
+    image: leituraAura,
     link: "url",
   },
   {
@@ -59,7 +59,7 @@ export const ConsultasMap = [
 
     Atendimento presencial e online. (individual e grupo)
     `,
-    image: {constelacoesFamiliares},
+    image: constelacoesFamiliares,
     link: "url",
   },
   {
@@ -84,7 +84,7 @@ export const ConsultasMap = [
 
     Atendimento presencial.
     `,
-    image: {reiki},
+    image: reiki,
     link: "url",
   },
   {
@@ -108,7 +108,7 @@ export const ConsultasMap = [
 
     Vamos mergulhar juntos nesta jornada?
     `,
-    image: {Renasser},
+    image: Renasser,
     link: "url",
   },
 ];

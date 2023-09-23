@@ -11,6 +11,7 @@ export default function consultas() {
             <div key={index}>
               <h3>{consulta.name}</h3>
               <img src={consulta.image} alt="" />
+              <button>Veja mais...</button>
             </div>
           )
         })}

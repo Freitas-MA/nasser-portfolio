@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { AiOutlineArrowDown } from "react-icons/ai";
 import { ConsultasLinkStyle } from "./ConsultasLink.style";
+import { Link } from "react-router-dom";
 
 const ConsultasLink = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -18,10 +19,18 @@ const ConsultasLink = () => {
   }, []);
 
   console.log(screenWidth);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   
   return (
     <ConsultasLinkStyle>
-        <span>Consultas <AiOutlineArrowDown id="arrowSymbol"/></span>
+        <span><Link onClick={scrollToTop}
+              to="/consultas">Consultas <AiOutlineArrowDown id="arrowSymbol"/></Link></span>
         <div id="subMenu">
           <ul>
             <li>Leitura de Aura</li>

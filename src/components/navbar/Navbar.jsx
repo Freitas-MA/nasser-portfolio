@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { StyledNavbar, StyledNavbarList } from "./Navbar.style.jsx";
+import React, { useEffect, useState } from "react";
+import { StyledNavbar } from "./Navbar.style.jsx";
 import ConsultasLink from "./ConsultasLink/ConsultasLink.jsx";
 import ImgBackground from "../../assets/Logo/2-removebg-preview.png";
 import { useMotionValueEvent, useScroll } from "framer-motion";
@@ -37,6 +37,25 @@ const Navbar = () => {
     });
   };
 
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  const getScreenWidth = () => {
+    setScreenWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', getScreenWidth);
+    return () => {
+      window.removeEventListener('resize', getScreenWidth);
+    };
+  }, []);
+
+  console.log(screenWidth);
+
+  const resizeClass = screenWidth <= 768 ? "mobile" : "desktop";
+
+  console.log(resizeClass);
+
   return (
     <StyledNavbar style={navbarStyle}>
       <section>
@@ -48,8 +67,8 @@ const Navbar = () => {
           <p>Nas´Ser</p>
         </Link>
         </div>
-        <div>
-          <StyledNavbarList id="menu">
+        <div >
+          <div className={resizeClass}>
             <li>
               <Link
               onClick={scrollToTop}
@@ -68,12 +87,6 @@ const Navbar = () => {
               preventScrollReset= "true"
               to="/contact">Contato</Link>
             </li>
-          </StyledNavbarList>
-          <div>
-            <label id="checkbox" htmlFor='floatMenu'>
-              &#9776;
-            </label>
-            <input type="checkbox" id="floatMenu"/>
           </div>
         </div>
       </section>

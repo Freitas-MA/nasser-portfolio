@@ -6,15 +6,18 @@ export default function consultas() {
   const consultas = ConsultasMap
   return (
     <ConsultasStyle>
-        {consultas.map((consulta, index) => {
-          return (
-            <div key={index}>
-              <h3>{consulta.name}</h3>
-              <img src={consulta.image} alt="" />
-              <button>Veja mais...</button>
-            </div>
-          )
-        })}
+      <div id="background" />
+        <section>
+          {consultas.map((consulta, index) => {
+            return (
+              <div key={index}>
+                <h3>{consulta.name}</h3>
+                <img src={consulta.image} alt="" />
+                <button>Veja mais...</button>
+              </div>
+            )
+          })}
+        </section>
     </ConsultasStyle>
   )
 }

@@ -43,87 +43,64 @@ export const StyledNavbar = styled.nav`
       }
     }
   }
-  & #floatMenu, #checkbox {
-    display: none;
-  }
-  @media (max-width: 768px) {
-    & #menu {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: start;
-      position: absolute;
-      top: 0rem;
-      right: 0;
-      margin-top: 1.7rem;
-      opacity: 0.9;
-      width: 100%;
-      height: 95vh;
-      background-color: ${colors.backgroundPrimary};
-      list-style: none;
-      color: ${colors.textPrimary};
-  }
-    & #checkbox {
-      display: none;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      right: 1rem;
-      cursor: pointer;
-    }
-    & #floatMenu:checked {
-      & ul {
-        position: float;
-        display: flex;
-        top: 0;
-        right: 0;
-        z-index: 999;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        right: 0;
-      }
-      
-      }
-    }
-  }
-`;
-
-export const StyledNavbarList = styled.ul`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+}
+.desktop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  & > li {
     height: 100%;
     width: 100%;
-    & > li {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        margin: 0 0.5rem;
-        padding: 5px;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        white-space: nowrap;
-        &:hover {
-            background-color: #ccc;
-            cursor: pointer;
-            border-radius: 0.5rem;
-            transform: scale(1.1);
-            transition: all 0.2s ease-in-out;
-        }
+    display: flex;
+    margin: 0 0.5rem;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    &:hover {
+      background-color: #ccc;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      transform: scale(1.1);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}
 
-       
-
-
+.mobile {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  & > li {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    margin: 0 0.5rem;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    &:hover {
+      background-color: #ccc;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      transform: scale(1.1);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}
 
 `;
+

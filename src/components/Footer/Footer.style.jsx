@@ -12,8 +12,6 @@ export const FooterContainer = styled.div`
     color: ${colors.textSecondary};
     text-align: center;
     font-size: 1rem;
-    padding: 0.5rem;
-    padding-top: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +22,7 @@ export const FooterContainer = styled.div`
         justify-content: center;
         align-items: center;
         gap: 1rem;
-        margin: 0.5rem;
+        margin: 0.3rem;
         width: 100%;
     }
 `;

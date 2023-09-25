@@ -42,9 +42,10 @@ export const StyledNavbar = styled.nav`
         }
       }
     }
+    
   }
 }
-.desktop {
+.desktop > ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -73,34 +74,58 @@ export const StyledNavbar = styled.nav`
   }
 }
 
-.mobile {
+& .desktop > #burgerMenu {
   display: none;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  height: 100%;
+}
+
+& .mobile #burgerMenu {
+  display: flex;
+  position: absolute;
+  top: 0.5rem;
+  right: 2rem;
+
+}
+& input {
+  display: none;
+}
+
+& .mobile > ul {
+  display: block;
+  position: absolute;
+  top: 5vh;
+  right: 0vh;
   width: 100%;
+  height: 100vh;
+  background-color: ${colors.backgroundSecondary};
+  border-radius: 0.5rem;
+  padding: 1rem;
+  align-items: center;
+  justify-items: space-between;
+  text-align: center;
+
   & > li {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    margin: 0 0.5rem;
-    padding: 5px;
-    justify-content: center;
-    align-items: center;
+    margin: auto 0;
+    padding: 1rem;
+    list-style: none;
+    display: block;
     text-align: center;
-    white-space: nowrap;
+    align-items: center;
+    line-height: 1.5rem;
+    height: 25%;
     &:hover {
       background-color: #ccc;
       cursor: pointer;
       border-radius: 0.5rem;
       transform: scale(1.1);
       transition: all 0.2s ease-in-out;
+  }
+
+  & checkbox:unchecked {
+    #responsiveMenu {
+      display: none;
     }
   }
+
 }
 
 `;
-

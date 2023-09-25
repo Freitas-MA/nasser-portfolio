@@ -5,6 +5,7 @@ import ImgBackground from "../../assets/Logo/2-removebg-preview.png";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { Theme } from "../../theme/theme.jsx";
 import { Link } from "react-router-dom";
+import { FaBars } from "react-icons/fa";
 
 const Navbar = () => {
   const { colors, layout } = Theme;
@@ -44,50 +45,82 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('resize', getScreenWidth);
+    window.addEventListener("resize", getScreenWidth);
     return () => {
-      window.removeEventListener('resize', getScreenWidth);
+      window.removeEventListener("resize", getScreenWidth);
     };
   }, []);
 
-  console.log(screenWidth);
+  const [activeMenu, setActiveMenu] = useState(false);
 
   const resizeClass = screenWidth <= 768 ? "mobile" : "desktop";
 
-  console.log(resizeClass);
+  const [checkboxValue, setCheckboxValue] = useState(false);
+
+  const handleCheckboxChange = (event) => {
+    setCheckboxValue(event.target.checked);
+  };
+
+  useEffect(() => {
+    if (checkboxValue) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [checkboxValue]);
+
+  // TODO --- Solve the probleme with the checkbox and the responsive menu
 
   return (
     <StyledNavbar style={navbarStyle}>
       <section>
         <div>
-        <Link
-        onClick={scrollToTop}
-        id="innerLink" to="/">
-          <img id="logoNasser" src={ImgBackground} alt="Nas´Ser" style={LogoStyle} />
-          <p>Nas´Ser</p>
-        </Link>
+          <Link onClick={scrollToTop} id="innerLink" to="/">
+            <img
+              id="logoNasser"
+              src={ImgBackground}
+              alt="Nas´Ser"
+              style={LogoStyle}
+            />
+            <p>Nas´Ser</p>
+          </Link>
         </div>
-        <div >
-          <div className={resizeClass}>
+        <div id="responsiveMenu" className={resizeClass}>
+          <ul>
             <li>
-              <Link
-              onClick={scrollToTop}
-              to="/">Home</Link>
+              <Link onClick={scrollToTop} to="/">
+                Home
+              </Link>
             </li>
             <li>
-              <Link
-              onClick={scrollToTop}
-              to="/beatriz-freitas">Beatriz Freitas</Link>
+              <Link onClick={scrollToTop} to="/beatriz-freitas">
+                Beatriz Freitas
+              </Link>
             </li>
             <ConsultasLink />
             <li>
               <Link
-              onClick={scrollToTop}
-              
-              preventScrollReset= "true"
-              to="/contact">Contato</Link>
+                onClick={scrollToTop}
+                preventScrollReset="true"
+                to="/contact"
+              >
+                Contato
+              </Link>
             </li>
-          </div>
+          </ul>
+          <input
+            type="checkbox"
+            id="checkButton"
+            checked={checkboxValue}
+            onChange={handleCheckboxChange}
+          />
+          <label id="burgerMenu" htmlFor="checkButton">
+            <FaBars />
+          </label>
+          {/* <label  htmlFor="checkButton">
+            <input id="checkButton" type="checkbox" />
+            <FaBars />
+          </label> */}
         </div>
       </section>
     </StyledNavbar>

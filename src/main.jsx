@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import { Home, Consultas, Contact, BeatrizFreitas, Error404 } from './pages/index'
+import { Home, Consultas, Contact, BeatrizFreitas, ConsultasItem, Error404 } from './pages/index'
 
 import {
   createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
@@ -16,6 +16,10 @@ const router = createBrowserRouter([
       { path: '/beatriz-freitas', element: <BeatrizFreitas/> },
       { path: '/consultas', element: <Consultas/> },
       { path: '/contact', element: <Contact/> },
+      { path: '/contact/:id', element: <ConsultasItem/>},
+
+
+      { path: '*', element: <Error404/>},
     ]
   },
 ])

@@ -26,6 +26,9 @@ const GlobalStyle = createGlobalStyle`
         height: 100vh;
         overflow-x: hidden;
   }
+  li {
+    list-style: none;
+  }
 `;
 
 export { GlobalStyle };

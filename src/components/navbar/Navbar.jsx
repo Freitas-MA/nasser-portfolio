@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { StyledNavbar } from "./Navbar.style.jsx";
-import ConsultasLink from "./ConsultasLink/ConsultasLink.jsx";
 import ImgBackground from "../../assets/Logo/2-removebg-preview.png";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { Theme } from "../../theme/theme.jsx";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
+import { AiOutlineArrowDown } from "react-icons/ai";
+
+import { ConsultasMap } from "../../Objects.API/Consultas.Map";
 
 const Navbar = () => {
   const { colors, layout } = Theme;
-
+  const consultas = ConsultasMap;
   const { scrollY } = useScroll();
   const [scrollPosition, setScrollPosition] = useState(scrollY.get());
 
@@ -17,13 +19,6 @@ const Navbar = () => {
     setScrollPosition(latest);
   });
 
-  const navbarStyle = {
-    backgroundColor:
-      scrollPosition !== 0 ? `${colors.shadowsColor}` : "transparent",
-    color:
-      scrollPosition !== 0 ? `${colors.textTertiary}` : `${colors.textPrimary}`,
-    transition: "background-color 0.2s ease-in-out",
-  };
   const LogoStyle = {
     backgroundColor:
       scrollPosition !== 0 ? `${colors.backgroundPrimary}` : "transparent",
@@ -36,9 +31,8 @@ const Navbar = () => {
       top: 0,
       behavior: "smooth",
     });
+    checkboxValue && setCheckboxValue(false);
   };
-
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   const getScreenWidth = () => {
     setScreenWidth(window.innerWidth);
@@ -51,33 +45,26 @@ const Navbar = () => {
     };
   }, []);
 
-  const [activeMenu, setActiveMenu] = useState(false);
-
-  const resizeClass = screenWidth <= 768 ? "mobile" : "desktop";
-
   const [checkboxValue, setCheckboxValue] = useState(false);
+
+  console.log(checkboxValue);
 
   const handleCheckboxChange = (event) => {
     setCheckboxValue(event.target.checked);
   };
 
-  useEffect(() => {
-    if (checkboxValue) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-  }, [checkboxValue]);
-
   // TODO --- Solve the probleme with the checkbox and the responsive menu
 
   return (
-    <StyledNavbar style={navbarStyle}>
+    <StyledNavbar
+      scrollposition={scrollPosition}
+      checkboxvalue={checkboxValue.toString()}
+    >
       <section>
         <div>
           <Link onClick={scrollToTop} id="innerLink" to="/">
             <img
-              id="logoNasser"
+              className="logo"
               src={ImgBackground}
               alt="Nas´Ser"
               style={LogoStyle}
@@ -85,8 +72,8 @@ const Navbar = () => {
             <p>Nas´Ser</p>
           </Link>
         </div>
-        <div id="responsiveMenu" className={resizeClass}>
-          <ul>
+        <div id="menuList">
+          <ul id="responsiveMenu">
             <li>
               <Link onClick={scrollToTop} to="/">
                 Home
@@ -97,7 +84,29 @@ const Navbar = () => {
                 Beatriz Freitas
               </Link>
             </li>
-            <ConsultasLink />
+            <li id="subMenu">
+              <span>
+                <Link onClick={scrollToTop} to="/consultas">
+                  Consultas <AiOutlineArrowDown id="arrowSymbol" />
+                </Link>
+              </span>
+              <div id="innerMenu">
+                <ul id="floatMenu">
+                  {consultas.map((consulta, index) => {
+                    return (
+                      <li key={index}>
+                        <Link
+                          onClick={scrollToTop}
+                          to={`/contact/${consulta.name}`}
+                        >
+                          {consulta.name}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </li>
             <li>
               <Link
                 onClick={scrollToTop}
@@ -110,17 +119,13 @@ const Navbar = () => {
           </ul>
           <input
             type="checkbox"
-            id="checkButton"
+            id="checkBox"
             checked={checkboxValue}
             onChange={handleCheckboxChange}
           />
-          <label id="burgerMenu" htmlFor="checkButton">
+          <label id="burgerMenu" htmlFor="checkBox">
             <FaBars />
           </label>
-          {/* <label  htmlFor="checkButton">
-            <input id="checkButton" type="checkbox" />
-            <FaBars />
-          </label> */}
         </div>
       </section>
     </StyledNavbar>

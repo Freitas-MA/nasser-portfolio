@@ -20,7 +20,6 @@ export const StyledAbout = styled.div`
   & section {
     display: grid;
     grid-template-columns: ${layout.gridTemplateColumns};
-    grid-wrap: wrap;
     align-items: start;
     justify-items: center;
 
@@ -31,7 +30,6 @@ export const StyledAbout = styled.div`
       width: 100%;
       max-width: 600px;
       line-height: 1.3rem;
-      border-shadow: 0 0.5rem 1rem ${colors.shadowsColor};
       & > img {
         width: 100%;
         height: auto;

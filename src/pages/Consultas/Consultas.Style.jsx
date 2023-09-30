@@ -28,6 +28,7 @@ export const ConsultasStyle = styled.div`
     & > div {
       margin: 10px;
       width: 250px;
+      min-width: 250px;
       height: auto;
       padding: 10px;
       overflow: hidden;

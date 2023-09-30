@@ -92,7 +92,7 @@ export const BeatrizFreitasStyled = styled.section`
             height: max-content;
             min-height: 10vh;
             max-height: 30vh;
-
+            
             & > div {
                 display: flex;
                 flex-direction: column;
@@ -104,7 +104,7 @@ export const BeatrizFreitasStyled = styled.section`
                 height: max-content;
                 min-height: 10vh;
                 max-height: 20vh;
-                padding: ${layout.padding};
+                padding: 2rem 0;
                 border-top: 1px solid ${colors.textPrimary};
                 border-bottom: 1px solid ${colors.textPrimary};
 
@@ -146,5 +146,5 @@ export const BeatrizFreitasStyled = styled.section`
         opacity: 0.8;
         z-index: -1;
     }
-    }
+
 `;

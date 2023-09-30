@@ -1,6 +1,7 @@
 import React from "react";
 import { BeatrizFreitasStyled } from "./BeatrizFreitas.style";
 import { motion } from "framer-motion";
+import { Background } from "../../components/index";
 import {
   beatrizProfile,
   beatrizAbout,
@@ -18,7 +19,7 @@ export default function BeatrizFreitas() {
 
   return (
     <BeatrizFreitasStyled>
-      <div id="background" />
+      <Background />
       <motion.section
         initial={{ transform: "translateY(60vh)", opacity: 0 }}
         animate={{ transform: "translateY(0vh)", opacity: 1 }}

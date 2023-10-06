@@ -1,3 +1,32 @@
+/**
+ * Styled component representing a navigation bar with responsive behavior.
+ *
+ * Inputs:
+ * - styled: Function from the styled-components library
+ * - Theme: Object from the "../../theme/theme" file
+ *
+ * Outputs:
+ * - StyledNavbar: A styled component representing a navigation bar
+ *
+ * Example Usage:
+ * import { styled } from "styled-components";
+ * import { Theme } from "../../theme/theme";
+ *
+ * const { colors, layout } = Theme;
+ * export const StyledNavbar = styled.nav`
+ *   // styles here
+ * `;
+ *
+ * Code Analysis:
+ * - Imports the necessary dependencies and the Theme object
+ * - Destructures the colors and layout properties from the Theme object
+ * - Defines the StyledNavbar component using the styled function from styled-components
+ * - Sets the styles for the navbar, including its position, width, height, background color, and transition
+ * - Defines nested styles for the sections and divs within the navbar
+ * - Uses media queries to adjust the navbar's appearance for mobile devices
+ * - Uses the checkbox value to control the display of the responsive menu
+ * - Applies additional styles for the logo and menu items
+ */
 import { styled } from "styled-components";
 import { Theme } from "../../theme/theme";
 
@@ -23,6 +52,8 @@ export const StyledNavbar = styled.nav`
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    max-width: ${layout.maxWidth};
+    margin: 0 auto;
     height: 100%;
     /* padding: 0 3rem; */
 

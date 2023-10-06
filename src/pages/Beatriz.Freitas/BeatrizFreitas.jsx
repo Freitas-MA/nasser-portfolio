@@ -13,9 +13,13 @@ export default function BeatrizFreitas() {
   const { aboutTitle, aboutText } = beatrizAbout;
   const { message, author } = messageProfile;
 
-  const paragraphs = aboutText
-    .split("\n")
-    .map((paragraph, index) => <p key={index}>{paragraph}</p>);
+  // Utility function to split text into paragraphs
+  function splitIntoParagraphs(text) {
+    return text.split("\n").map((paragraph, index) => <p key={index}>{paragraph}</p>);
+  }
+
+  // Usage in the component
+  const paragraphs = splitIntoParagraphs(aboutText);
 
   return (
     <BeatrizFreitasStyled>
@@ -47,3 +51,9 @@ export default function BeatrizFreitas() {
     </BeatrizFreitasStyled>
   );
 }
+
+/**
+ * Renders a React component that displays information about Beatriz Freitas.
+ *
+ * @returns {JSX.Element} The rendered React component.
+ */

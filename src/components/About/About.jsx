@@ -2,17 +2,18 @@ import React from "react";
 import { StyledAbout } from "./About.style";
 import LogoNasser from "../../assets/Logo/2-removebg-preview.png";
 import Frase from "./MotivationalFrase/Frase";
-import { aboutTexts } from "./texts";
 import { motion } from "framer-motion";
 
-export default function About() {
-  const { text, author } = aboutTexts;
+export default function About(props = { text: "", author: "" }) {
+  const { text, author } = props;
   const paragraphs = text
+  ? text
     .split("\n\n")
     .map(
       (paragraph) => `<p>${paragraph}</p>`
     )
-    .join("");
+    .join("")
+  : "";
   return (
     <StyledAbout>
       <section>

@@ -4,12 +4,14 @@ import sacredHeartImg from "../../assets/SectionsImg/SacredHeart.png";
 import { sacredHeart } from "./SacredHeart.text";
 import { motion } from "framer-motion";
 
-export default function SacredHeart() {
-  const { text } = sacredHeart;
+export default function SacredHeart(props) {
+  const { text } = props;
   const paragraphs = text
+  ? text 
     .split("\n\n")
     .map((paragraph) => `<p>${paragraph}</p>`)
-    .join("");
+    .join("")
+  : "";
 
 
   return (

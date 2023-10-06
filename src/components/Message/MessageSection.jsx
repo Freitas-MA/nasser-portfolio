@@ -1,15 +1,15 @@
 import Carousel from "./Carousel/Carousel";
 import { MessageStyled } from "./Message.Styled";
-import { messageTexts } from "./texts";
-
 import React from "react";
 
-export default function MessageSection() {
-  const { title, text } = messageTexts;
+export default function MessageSection(props) {
+  const { title, text } = props;
   const paragraphs = text
-    .split("\n\n")
-    .map((paragraph) => `<p>${paragraph}</p>`)
-    .join("");
+    ? text
+        .split("\n\n")
+        .map((paragraph) => `<p>${paragraph}</p>`)
+        .join("")
+    : "";
 
   return (
     <MessageStyled>

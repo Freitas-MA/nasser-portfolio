@@ -2,7 +2,8 @@ import React from "react";
 import { StyledHero } from "./Hero.styles";
 import { motion } from "framer-motion";
 
-export default function Hero() {
+export default function Hero(props) {
+  const { title } = props;
   return (
     <StyledHero id="Home">
       <motion.div
@@ -10,7 +11,9 @@ export default function Hero() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 3 }}
       >
-        <h1>Nas´Ser</h1>
+        <h1>
+          {title}
+        </h1>
       </motion.div>
     </StyledHero>
   );

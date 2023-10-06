@@ -9,22 +9,29 @@ import { AiOutlineArrowDown } from "react-icons/ai";
 
 import { ConsultasMap } from "../../Objects.API/Consultas.Map";
 
+/**
+ * Renders a navigation bar component for a website.
+ *
+ * @returns {JSX.Element} The rendered navigation bar component.
+ */
 const Navbar = () => {
-  const { colors, layout } = Theme;
+  const { colors } = Theme;
   const consultas = ConsultasMap;
   const { scrollY } = useScroll();
   const [scrollPosition, setScrollPosition] = useState(scrollY.get());
+  const [checkboxValue, setCheckboxValue] = useState(false);
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    setScrollPosition(latest);
-  });
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(scrollY.get());
+    };
 
-  const LogoStyle = {
-    backgroundColor:
-      scrollPosition !== 0 ? `${colors.backgroundPrimary}` : "transparent",
-    transition: "background-color 0.2s ease-in-out",
-    cursor: "pointer",
-  };
+    const unsubscribe = scrollY.onChange(handleScroll);
+
+    return () => {
+      unsubscribe();
+    };
+  }, [scrollY]);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -34,26 +41,9 @@ const Navbar = () => {
     checkboxValue && setCheckboxValue(false);
   };
 
-  const getScreenWidth = () => {
-    setScreenWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", getScreenWidth);
-    return () => {
-      window.removeEventListener("resize", getScreenWidth);
-    };
-  }, []);
-
-  const [checkboxValue, setCheckboxValue] = useState(false);
-
-  console.log(checkboxValue);
-
   const handleCheckboxChange = (event) => {
     setCheckboxValue(event.target.checked);
   };
-
-  // TODO --- Solve the probleme with the checkbox and the responsive menu
 
   return (
     <StyledNavbar
@@ -67,7 +57,6 @@ const Navbar = () => {
               className="logo"
               src={ImgBackground}
               alt="Nas´Ser"
-              style={LogoStyle}
             />
             <p>Nas´Ser</p>
           </Link>
@@ -92,18 +81,16 @@ const Navbar = () => {
               </span>
               <div id="innerMenu">
                 <ul id="floatMenu">
-                  {consultas.map((consulta, index) => {
-                    return (
-                      <li key={index}>
-                        <Link
-                          onClick={scrollToTop}
-                          to={`/contact/${consulta.name}`}
-                        >
-                          {consulta.name}
-                        </Link>
-                      </li>
-                    );
-                  })}
+                  {consultas.map((consulta, index) => (
+                    <li key={index}>
+                      <Link
+                        onClick={scrollToTop}
+                        to={`/contact/${consulta.name}`}
+                      >
+                        {consulta.name}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </li>
@@ -133,3 +120,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { StyledNavbar } from "./Navbar.style.jsx";
 import ImgBackground from "../../assets/Logo/2-removebg-preview.png";
 import { useMotionValueEvent, useScroll } from "framer-motion";
@@ -7,20 +7,29 @@ import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineArrowDown } from "react-icons/ai";
 
-import { ConsultasMap } from "../../Objects.API/Consultas.Map";
+import {
+  ConsultasMap,
+  navbarMapLeft,
+  navbarMapRight,
+} from "../../Objects.API/Navbar.Maps.js";
 
 /**
- * Renders a navigation bar component for a website.
- *
- * @returns {JSX.Element} The rendered navigation bar component.
+ * Renders the Navbar component with a logo, menu items, and a checkbox for mobile view.
+ * @returns {JSX.Element} The Navbar component.
  */
 const Navbar = () => {
-  const { colors } = Theme;
   const consultas = ConsultasMap;
   const { scrollY } = useScroll();
   const [scrollPosition, setScrollPosition] = useState(scrollY.get());
   const [checkboxValue, setCheckboxValue] = useState(false);
 
+  // Enter with the data from the API || Navbar.Maps.js
+  const dataLeft = navbarMapLeft;
+  const dataRight = navbarMapRight;
+
+  /**
+   * Updates the scroll position state when the user scrolls.
+   */
   useEffect(() => {
     const handleScroll = () => {
       setScrollPosition(scrollY.get());
@@ -33,6 +42,9 @@ const Navbar = () => {
     };
   }, [scrollY]);
 
+  /**
+   * Scrolls to the top of the page and unchecks the mobile menu checkbox.
+   */
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -41,6 +53,10 @@ const Navbar = () => {
     checkboxValue && setCheckboxValue(false);
   };
 
+  /**
+   * Updates the checkbox value state when the user clicks on the mobile menu checkbox.
+   * @param {Object} event - The event object.
+   */
   const handleCheckboxChange = (event) => {
     setCheckboxValue(event.target.checked);
   };
@@ -52,57 +68,61 @@ const Navbar = () => {
     >
       <section>
         <div>
-          <Link onClick={scrollToTop} id="innerLink" to="/">
-            <img
-              className="logo"
-              src={ImgBackground}
-              alt="Nas´Ser"
-            />
-            <p>Nas´Ser</p>
-          </Link>
+          {dataLeft.map((data, index) => {
+            const Component = data.component;
+            const key = data.id || index;
+            const logo = data.logo || "";
+            const title = data.title || "";
+            const link = data.link || "";
+            const className = data.className || "";
+
+            return (
+              <Component key={key} id={key} to={link} onClick={scrollToTop}>
+                <img className={className} src={logo} alt={title} />
+                <p>{title}</p>
+              </Component>
+            );
+          })}
         </div>
         <div id="menuList">
           <ul id="responsiveMenu">
-            <li>
-              <Link onClick={scrollToTop} to="/">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link onClick={scrollToTop} to="/beatriz-freitas">
-                Beatriz Freitas
-              </Link>
-            </li>
-            <li id="subMenu">
-              <span>
-                <Link onClick={scrollToTop} to="/consultas">
-                  Consultas <AiOutlineArrowDown id="arrowSymbol" />
-                </Link>
-              </span>
-              <div id="innerMenu">
-                <ul id="floatMenu">
-                  {consultas.map((consulta, index) => (
-                    <li key={index}>
-                      <Link
-                        onClick={scrollToTop}
-                        to={`/contact/${consulta.name}`}
-                      >
-                        {consulta.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </li>
-            <li>
-              <Link
-                onClick={scrollToTop}
-                preventScrollReset="true"
-                to="/contact"
-              >
-                Contato
-              </Link>
-            </li>
+            {dataRight.map((data, index) => {
+              const Component = data.component;
+              const key = data.id || index;
+              const title = data.title || "";
+              const link = data.link || "";
+              const subMenu = data.subMenu;
+
+              return subMenu.length > 0 ? (
+                <Component key={key} className="subMenu">
+                  <span>
+                    <Link onClick={scrollToTop} to={link}>
+                      {title} <AiOutlineArrowDown className="arrowSymbol" />
+                    </Link>
+                  </span>
+                  <div className="innerMenu">
+                    <ul className="floatMenu">
+                      {subMenu.map((subMenu, index) => (
+                        <li key={index}>
+                          <Link
+                            onClick={scrollToTop}
+                            to={`/consultas/${subMenu.name}`}
+                          >
+                            {subMenu.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Component>
+              ) : (
+                <Component key={key}>
+                  <Link onClick={scrollToTop} to={link}>
+                    {title}
+                  </Link>
+                </Component>
+              );
+            })}
           </ul>
           <input
             type="checkbox"
@@ -120,4 +140,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

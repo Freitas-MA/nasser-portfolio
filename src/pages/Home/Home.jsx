@@ -14,8 +14,8 @@ export default function Home() {
         const title = data.title || "";
         const text = data.text || "";
         const key = data.key || index;
-        // TODO fix the data.Coisa!!
-        return <Component key={key} author={author} title={title} text={text} />;
+        const Photos = data.photos || [];
+        return <Component key={key} author={author} title={title} text={text} photos={Photos}/>;
       })}
     </StyledHome>
   );

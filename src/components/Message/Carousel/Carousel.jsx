@@ -1,9 +1,9 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Photos } from "../../../assets/Carousel.Photos";
-import { StyledCarousel } from "./Carousel.Style";
 
-function MyCarousel() {
+function MyCarousel(props) {
+  const { Photos } = props;
+  console.log(props);
   return (
     <Carousel
       showArrows={true}

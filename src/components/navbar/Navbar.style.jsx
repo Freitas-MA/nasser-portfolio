@@ -31,6 +31,12 @@ import { styled } from "styled-components";
 import { Theme } from "../../theme/theme";
 
 const { colors, layout } = Theme;
+/**
+ * Styled component for the navbar
+ * @param {number} scrollposition - The current scroll position of the page
+ * @param {boolean} checkboxvalue - The value of the checkbox used for responsive menu
+ * @returns {JSX.Element} - The styled navbar component
+ */
 export const StyledNavbar = styled.nav`
   display: flex;
   justify-content: space-between;
@@ -47,6 +53,7 @@ export const StyledNavbar = styled.nav`
       : `${colors.textPrimary}`};
   transition: background-color 0.2s ease-in-out;
 
+  // Section containing the logo and menu
   & > section {
     display: flex;
     align-items: center;
@@ -55,29 +62,33 @@ export const StyledNavbar = styled.nav`
     max-width: ${layout.maxWidth};
     margin: 0 auto;
     height: 100%;
-    /* padding: 0 3rem; */
 
+    // Div containing the logo and menu items
     & > div {
       display: flex;
       align-items: center;
       justify-content: space-between;
       width: 100%;
       height: 100%;
-      /* padding: 0 3rem; */
-      /* height: 50px; */
 
+      // Div containing the logo and inner link
       & > #innerLink {
         display: flex;
         align-items: center;
         gap: 1rem;
       }
+
+      // Burger menu icon
       & #burgerMenu {
         display: none;
       }
+
+      // Hidden input used for responsive menu checkbox
       & > input {
         display: none;
       }
 
+      // Responsive menu
       & > #responsiveMenu {
         display: flex;
         align-items: center;
@@ -85,37 +96,46 @@ export const StyledNavbar = styled.nav`
         width: 100%;
         padding: 0 3rem;
 
-        & #subMenu {
+        // Submenu items
+        & .subMenu {
           height: 50px;
           display: flex;
           flex-direction: column;
           text-align: center;
-          & > #innerMenu {
+
+          // Inner submenu items
+          & > .innerMenu {
             position: relative;
             display: none;
           }
+
+          // Show inner submenu items on hover
           &:hover {
-            & > #innerMenu {
+            & > .innerMenu {
               display: flex;
               flex-direction: column;
             }
           }
 
+          // Submenu item text and arrow
           & > span {
             margin-top: 0.9rem;
-            & #arrowSymbol {
+            & .arrowSymbol {
               transform: translateY(2px);
             }
           }
-          & > #innerMenu > #floatMenu {
+
+          // Floating submenu items
+          & > .innerMenu > .floatMenu {
             position: absolute;
-            top: 100%;
+            top: 17px;
             width: max-content;
             padding: 0.5rem 0.5rem;
             border-radius: 5px;
             background-color: ${colors.backgroundPrimary};
             box-shadow: 2px 5px 10px 0px ${colors.shadowsColor};
 
+            // Submenu item
             & > li {
               margin: 2px 0;
               padding: 0.5rem 0.2rem;
@@ -125,13 +145,17 @@ export const StyledNavbar = styled.nav`
               border-radius: 5px;
               cursor: pointer;
               transition: background-color 0.2s ease-in-out;
+
+              // Highlight submenu item on hover
               &:hover {
                 background-color: ${colors.backgroundPrimary};
                 color: ${colors.textPrimary};
               }
             }
+
+            // Show floating submenu items on hover
             &:hover {
-              & > #innerMenu > #floatMenu {
+              & > .innerMenu > .floatMenu {
                 display: flex;
                 flex-direction: column;
               }
@@ -139,14 +163,8 @@ export const StyledNavbar = styled.nav`
           }
         }
       }
-      /* Check box functions 
-    !Inside of the checkbox function I'm passing the value of the checkbox to the styled component as checkboxValue, tha value will be received as props and will be used to change the display of the menu when the menu is in responsive mode.
-    #
-    */
 
-      /* 
-    !This is the logo style, the background color is going to change when the scroll position is different than 0, and the transition is going to be smooth.
-    */
+      // Logo style
       .logo {
         background-color: ${(props) =>
           props.scrollposition !== 0
@@ -159,20 +177,21 @@ export const StyledNavbar = styled.nav`
       }
     }
 
-    /* 
-  !Now i'm going to use the @media query to change the format of the navbar when the display is less than 768px (mobile)...
-  !The menu is going to be displayed as a full screen when the checkbox is checked, and is going to be undisplayed when the checkbox is unchecked.
-  */
+    // Media query for responsive menu
     @media (max-width: 768px) {
       #menuList {
         display: flex;
         flex-direction: row-reverse;
         position: relative;
+        max-height: 100%;
 
+        // Burger menu icon
         & > #burgerMenu {
           display: flex;
           margin-right: 1rem;
         }
+
+        // Responsive menu
         #responsiveMenu {
           display: flex;
           flex-direction: column;
@@ -184,16 +203,20 @@ export const StyledNavbar = styled.nav`
           width: 100vw;
           min-width: 100vw;
           height: 100vh;
+          max-height: 100vh;
           padding-bottom: 10rem;
           background-color: ${colors.shadowsColor};
           color: ${colors.textTertiary};
           transition: all 0.2s ease-in-out;
-          transform: translateY(-17px) ${(props) =>
-            props.checkboxvalue === "true"
-              ? "translateX(0)"
-              : "translateX(110vw)"}; // !Here is where the magic happens, the menu is going to be displayed when the checkbox is checked, and is going to be undisplayed when the checkbox is unchecked.
+          transform: translateY(-17px)
+            ${(props) =>
+              props.checkboxvalue === "true"
+                ? "translateX(0)"
+                : "translateX(110vw)"};
           overflow: hidden;
-          & #subMenu {
+
+          // Submenu items
+          & .subMenu {
             width: 100%;
             height: auto;
             display: flex;
@@ -201,11 +224,13 @@ export const StyledNavbar = styled.nav`
             text-align: center;
             padding-bottom: 1rem;
 
+            // Submenu item text
             & > span {
               margin-bottom: 0.9rem;
             }
 
-            & > #innerMenu {
+            // Inner submenu items
+            & > .innerMenu {
               display: flex;
               flex-direction: column;
               position: unset;
@@ -213,8 +238,9 @@ export const StyledNavbar = styled.nav`
               height: auto;
               align-items: center;
               justify-content: center;
+              margin: auto 0;
 
-              & #floatMenu {
+              & .floatMenu {
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;

@@ -1,7 +1,6 @@
 import React from "react";
 import { StyledSacredHeart } from "./SacredHeart.style";
 import sacredHeartImg from "../../assets/SectionsImg/SacredHeart.png";
-import { sacredHeart } from "./SacredHeart.text";
 import { motion } from "framer-motion";
 
 export default function SacredHeart(props) {

@@ -15,8 +15,8 @@ const router = createBrowserRouter([
       { path: '/', element: <Home/> },
       { path: '/beatriz-freitas', element: <BeatrizFreitas/> },
       { path: '/consultas', element: <Consultas/> },
-      { path: '/contact', element: <Contact/> },
-      { path: '/contact/:id', element: <ConsultasItem/>},
+      { path: '/contato', element: <Contact/> },
+      { path: '/consultas/:id', element: <ConsultasItem/>},
 
 
       { path: '*', element: <Error404/>},

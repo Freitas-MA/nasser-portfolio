@@ -23,7 +23,7 @@ export default function consultas() {
               <h3>{consulta.name}</h3>
               <img src={consulta.image} alt={consulta.name} />
               <button>
-                <Link to={`/contact/${consulta.name}`}>Saiba mais</Link>
+                <Link to={`/consultas/${consulta.name}`}>Saiba mais</Link>
               </button>
             </div>
           )

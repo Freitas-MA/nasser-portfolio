@@ -3,7 +3,8 @@ import { MessageStyled } from "./Message.Styled";
 import React from "react";
 
 export default function MessageSection(props) {
-  const { title, text } = props;
+  const { title, text, photos } = props;
+  console.log(props.Photos);
   const paragraphs = text
     ? text
         .split("\n\n")
@@ -16,9 +17,7 @@ export default function MessageSection(props) {
       <div>
         <h1>{title}</h1>
         <div dangerouslySetInnerHTML={{ __html: paragraphs }} />
-      </div>
-      <div id="Carousel">
-        <Carousel />
+        <Carousel Photos={photos}/>     
       </div>
     </MessageStyled>
   );

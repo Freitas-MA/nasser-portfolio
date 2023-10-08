@@ -4,9 +4,9 @@ import { Theme } from "../../theme/theme";
 const { colors, fontSize, layout } = Theme;
 
 export const MessageStyled = styled.section`
-  display: grid;
-  grid-template-columns: ${layout.gridTemplateColumns};
-  grid-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
   justify-content: center;
@@ -16,12 +16,21 @@ export const MessageStyled = styled.section`
   margin-bottom: 2rem;
   padding: ${layout.padding};
 
+  & .carousel.carousel-slider {
+    border-radius: 10px;
+    box-shadow: 0 0.5rem 1rem ${colors.shadowsColor};
+    width: 600px;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+
   & > div {
     background-color: ${colors.backgroundPrimary};
     height: max-content;
     min-width: 350px;
-    max-width: 850px;
-    padding: 1rem;
+    max-width: 1200px;
+    padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 0.5rem 1rem ${colors.shadowsColor};
     margin: 0 auto;

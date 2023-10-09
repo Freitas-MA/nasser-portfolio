@@ -106,7 +106,7 @@ const Navbar = () => {
                         <li key={index}>
                           <Link
                             onClick={scrollToTop}
-                            to={`/consultas/${subMenu.name}`}
+                            to={`/consultas/${index}`}
                           >
                             {subMenu.name}
                           </Link>

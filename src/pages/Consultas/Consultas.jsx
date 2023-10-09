@@ -13,6 +13,8 @@ import { Background } from "../../components/index";
 export default function consultas() {
   const consultas = ConsultasMap
 
+  console.log(consultas)
+
   return (
     <ConsultasStyle>
       <Background />
@@ -23,7 +25,7 @@ export default function consultas() {
               <h3>{consulta.name}</h3>
               <img src={consulta.image} alt={consulta.name} />
               <button>
-                <Link to={`/consultas/${consulta.name}`}>Saiba mais</Link>
+                <Link to={`/consultas/${index}`}>Saiba mais</Link>
               </button>
             </div>
           )

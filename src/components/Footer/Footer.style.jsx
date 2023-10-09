@@ -4,6 +4,11 @@ import { Theme } from "../../theme/theme";
 const { colors, fonts } = Theme;
 
 export const FooterContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   position: static;
   left: 0;
   bottom: 0;
@@ -12,9 +17,6 @@ export const FooterContainer = styled.div`
   color: ${colors.textSecondary};
   text-align: center;
   font-size: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   z-index: 9999;
   & > div {
     display: flex;
@@ -22,5 +24,6 @@ export const FooterContainer = styled.div`
     align-items: center;
     gap: 1rem;
     width: 100%;
+    max-width: 350px;
   }
 `;

@@ -92,6 +92,8 @@ export const BeatrizFreitasStyled = styled.section`
             height: max-content;
             min-height: 10vh;
             max-height: 30vh;
+            border-top: 1px solid ${colors.textPrimary};
+            border-bottom: 1px solid ${colors.textPrimary};
             
             & > div {
                 display: flex;
@@ -104,11 +106,7 @@ export const BeatrizFreitasStyled = styled.section`
                 height: max-content;
                 min-height: 10vh;
                 max-height: 20vh;
-                padding: 2rem 0;
-                border-top: 1px solid ${colors.textPrimary};
-                border-bottom: 1px solid ${colors.textPrimary};
-
-                & > p {
+               & > p {
                     font-size: ${fontSize.medium};
                     color: ${colors.textPrimary};
                     text-align: start;

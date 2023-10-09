@@ -223,6 +223,7 @@ export const StyledNavbar = styled.nav`
             flex-direction: column;
             text-align: center;
             padding-bottom: 1rem;
+            box-shadow: 2px 5px 10px 0px ${colors.textTertiary};
 
             // Submenu item text
             & > span {
@@ -239,6 +240,7 @@ export const StyledNavbar = styled.nav`
               align-items: center;
               justify-content: center;
               margin: auto 0;
+              
 
               & .floatMenu {
                 display: flex;
@@ -254,13 +256,15 @@ export const StyledNavbar = styled.nav`
                 gap: 1rem;
 
                 & > li {
-                  width: 100%;
-                  margin: 0;
+                  width: 80%;
+                  margin: 0 auto;
                   border-radius: 10px;
                   background-color: ${colors.shadowsColor};
                   cursor: pointer;
                   transition: background-color 0.2s ease-in-out;
                   font-size: ${Theme.fontSize.xSmall};
+                  box-shadow: 2px 5px 10px 0px ${colors.textTertiary};
+
                   &:hover {
                     background-color: transparent;
                   }
@@ -282,6 +286,7 @@ export const StyledNavbar = styled.nav`
             cursor: pointer;
             transition: background-color 0.2s ease-in-out;
             border-top: 1px solid ${colors.backgroundPrimary};
+            box-shadow: 2px 5px 10px 0px ${colors.textTertiary};
             &:hover {
               background-color: ${colors.backgroundPrimary};
               color: ${colors.textPrimary};

@@ -25,6 +25,7 @@ export default function Contact() {
               <p>Form description goes here</p>
             </div>
           </LeftSide>
+          {/*!! TODO Fix all the StyledComponents  */}
           <RightSide>
             <div>
               <h2>Form Title</h2>

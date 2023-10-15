@@ -29,8 +29,12 @@ export const StyledAbout = styled.div`
       padding: 0.5rem;
       width: 100%;
       max-width: 600px;
+      height: 100%;
       line-height: 1.3rem;
       & > img {
+        position: sticky;
+        top: 20%;
+        /* transform: translateY(-30%); */
         width: 100%;
         height: auto;
         max-width: 600px;

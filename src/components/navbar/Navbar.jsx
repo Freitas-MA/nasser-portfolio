@@ -77,7 +77,7 @@ const Navbar = () => {
             const className = data.className || "";
 
             return (
-              <Component key={key} id={key} to={link} onClick={scrollToTop}>
+              <Component className="innerLink" key={key} id={key} to={link} onClick={scrollToTop}>
                 <img className={className} src={logo} alt={title} />
                 <p>{title}</p>
               </Component>
@@ -103,8 +103,9 @@ const Navbar = () => {
                   <div className="innerMenu">
                     <ul className="floatMenu">
                       {subMenu.map((subMenu, index) => (
-                        <li key={index}>
+                        <li key={index} className="listSubmenu">
                           <Link
+                            className="innerLink linkSubMenu"
                             onClick={scrollToTop}
                             to={`/consultas/${index}`}
                           >

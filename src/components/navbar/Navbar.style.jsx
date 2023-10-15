@@ -72,11 +72,14 @@ export const StyledNavbar = styled.nav`
       height: 100%;
 
       // Div containing the logo and inner link
-      & > #innerLink {
+      & .innerLink {
         display: flex;
         align-items: center;
         gap: 1rem;
+        justify-content: center;
+        /* position: absolute; */
       }
+
 
       // Burger menu icon
       & #burgerMenu {
@@ -215,6 +218,24 @@ export const StyledNavbar = styled.nav`
                 : "translateX(110vw)"};
           overflow: hidden;
 
+          & > li {
+            position: relative;
+
+            & > a {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              text-align: center;
+              justify-content: center;
+              align-items: center;
+              display: flex; /* add this line */
+              align-items: center; /* add this line */
+
+            }
+          }
+
           // Submenu items
           & .subMenu {
             width: 100%;
@@ -265,9 +286,19 @@ export const StyledNavbar = styled.nav`
                   font-size: ${Theme.fontSize.xSmall};
                   box-shadow: 2px 5px 10px 0px ${colors.textTertiary};
 
+                  position: relative;
+
                   &:hover {
                     background-color: transparent;
                   }
+
+                  & > a {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+
+                 }
                 }
               }
             }

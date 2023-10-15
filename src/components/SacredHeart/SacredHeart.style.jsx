@@ -7,6 +7,8 @@ export const StyledSacredHeart = styled.div`
     width: 100%;
     height: auto;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 2rem;
@@ -32,6 +34,8 @@ export const StyledSacredHeart = styled.div`
             }
         }
         & > #sacredHeartText {
+            display: flex;
+            flex-direction: column;
             padding: 1.5rem;
             padding-top: 5rem;
             width: 100%;

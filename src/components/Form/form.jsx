@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
 const JsFormContainer = styled.form`
   display: flex;
@@ -12,6 +11,7 @@ const JsFormContainer = styled.form`
   width: 100%;
   height: 100%;
   padding: 2rem;
+
 
   .field {
     position: relative;
@@ -67,11 +67,6 @@ const JsFormContainer = styled.form`
     }
   }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 1rem;
 
     & > #buttonSubmit {
       width: 60px;

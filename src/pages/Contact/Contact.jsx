@@ -15,6 +15,7 @@ export default function Contact() {
   const {
     title,
     message,
+    message2,
     email,
     telefone,
     instagram,
@@ -74,11 +75,11 @@ export default function Contact() {
         </LeftSide>
         {/*!! TODO Fix all the StyledComponents  */}
         <RightSide>
-          <div>
-            <h2>{message}</h2>
+          <div className="form-message">
+            <h2>{message2}</h2>
             <p>{descriptionForm}</p>
           </div>
-          <Form />
+          <Form className='form-field'/>
         </RightSide>
       </FormContainer>
     </ContactSection>

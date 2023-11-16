@@ -61,7 +61,8 @@ export const RightSide = styled.div`
   justify-content: center;
   align-items: center;
   width: 60%;
-  height: 50vh;
+height: auto;
+  min-height: 50vh;
   padding: 1rem;
   margin: 1rem;
   min-width: 280px;

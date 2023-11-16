@@ -3,18 +3,17 @@
  *
  * Inputs:
  * - styled: Function from the styled-components library
- * - Theme: Object from the "../../theme/theme" file
+ * - Theme: Object from the "../../theme/Theme" file
  *
  * Outputs:
  * - StyledNavbar: A styled component representing a navigation bar
  *
  * Example Usage:
  * import { styled } from "styled-components";
- * import { Theme } from "../../theme/theme";
+ * import { Theme } from "../../theme/Theme";
  *
  * const { colors, layout } = Theme;
  * export const StyledNavbar = styled.nav`
- *   // styles here
  * `;
  *
  * Code Analysis:
@@ -28,7 +27,7 @@
  * - Applies additional styles for the logo and menu items
  */
 import { styled } from "styled-components";
-import { Theme } from "../../theme/theme";
+import { Theme } from "../../theme/Theme";
 
 const { colors, layout } = Theme;
 /**
@@ -79,7 +78,6 @@ export const StyledNavbar = styled.nav`
         justify-content: center;
         /* position: absolute; */
       }
-
 
       // Burger menu icon
       & #burgerMenu {
@@ -232,7 +230,6 @@ export const StyledNavbar = styled.nav`
               align-items: center;
               display: flex; /* add this line */
               align-items: center; /* add this line */
-
             }
           }
 
@@ -261,7 +258,6 @@ export const StyledNavbar = styled.nav`
               align-items: center;
               justify-content: center;
               margin: auto 0;
-              
 
               & .floatMenu {
                 display: flex;
@@ -297,8 +293,7 @@ export const StyledNavbar = styled.nav`
                     top: 0;
                     left: 0;
                     width: 100%;
-
-                 }
+                  }
                 }
               }
             }
@@ -326,5 +321,15 @@ export const StyledNavbar = styled.nav`
         }
       }
     }
+
+   & #responsive-background {
+      display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+    #responsive-background {
+      display: flex;
+    }
+  }
   }
 `;

@@ -1,11 +1,11 @@
 import React, { Component, useEffect, useState } from "react";
 import { StyledNavbar } from "./Navbar.style.jsx";
-import ImgBackground from "../../assets/Logo/2-removebg-preview.png";
 import { useMotionValueEvent, useScroll } from "framer-motion";
-import { Theme } from "../../theme/theme.jsx";
+import { Theme } from "../../theme/Theme.jsx";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineArrowDown } from "react-icons/ai";
+import Background from "../Background/Background.jsx";
 
 import {
   ConsultasMap,
@@ -77,7 +77,13 @@ const Navbar = () => {
             const className = data.className || "";
 
             return (
-              <Component className="innerLink" key={key} id={key} to={link} onClick={scrollToTop}>
+              <Component
+                className="innerLink"
+                key={key}
+                id={key}
+                to={link}
+                onClick={scrollToTop}
+              >
                 <img className={className} src={logo} alt={title} />
                 <p>{title}</p>
               </Component>
@@ -86,6 +92,7 @@ const Navbar = () => {
         </div>
         <div id="menuList">
           <ul id="responsiveMenu">
+            {checkboxValue && <Background />}
             {dataRight.map((data, index) => {
               const Component = data.component;
               const key = data.id || index;

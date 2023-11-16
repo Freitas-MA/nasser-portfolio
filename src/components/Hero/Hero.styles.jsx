@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { Theme } from "../../theme/theme";
+import { Theme } from "../../theme/Theme";
 
 const { fontSize, layout, fontFamily } = Theme;
 export const StyledHero = styled.div`
@@ -13,4 +13,10 @@ export const StyledHero = styled.div`
   height: 100vh;
   max-width: ${layout.maxWidth};
   margin: 0 auto;
+
+  @media screen and (max-width: 768px) {
+    // Insira suas regras CSS aqui para telas com largura máxima de 768px
+    font-size: ${fontSize.xLarge};
+    padding: 0;
+  }
 `;

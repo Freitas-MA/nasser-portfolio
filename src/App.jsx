@@ -1,12 +1,10 @@
 import { GlobalStyle } from "./GlobalStyle";
 import { Navbar } from "./components";
 import { ThemeProvider } from "styled-components";
-import { Theme } from "./theme/theme";
+import { Theme } from "./theme/Theme";
 import Footer from "./components/Footer/Footer";
 // Router component
 import { Outlet } from "react-router-dom";
-
-
 
 function App() {
   return (
@@ -14,7 +12,7 @@ function App() {
       <ThemeProvider theme={Theme}>
         <GlobalStyle />
         <Navbar />
-          <Outlet/>
+        <Outlet />
         <Footer />
       </ThemeProvider>
     </>

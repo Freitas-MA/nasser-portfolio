@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { Theme } from "../../theme/theme";
+import { Theme } from "../../theme/Theme";
 import ImgBackground from "../../assets/background.png";
 
 const { colors } = Theme;
@@ -24,7 +24,7 @@ export const ConsultasStyle = styled.div`
     min-height: 100vh;
     height: max-content;
     padding: 4rem 10rem;
-  
+
     & > div {
       margin: 10px;
       width: 250px;
@@ -32,21 +32,20 @@ export const ConsultasStyle = styled.div`
       height: auto;
       padding: 10px;
       overflow: hidden;
-  
+
       & > h3 {
         text-align: center;
         margin-bottom: 10px;
       }
-  
+
       & > img {
         width: 100%;
         height: 100%;
         border-radius: 5px;
         object-fit: cover;
         box-shadow: 2px 5px 10px 0px ${colors.shadowsColor};
-  
       }
-  
+
       & > button {
         display: block;
         margin: 10px auto;
@@ -58,7 +57,7 @@ export const ConsultasStyle = styled.div`
         color: ${colors.textPrimary};
         cursor: pointer;
         transition: all 0.3s ease-in-out;
-  
+
         &:hover {
           transform: scale(1.1);
         }
@@ -77,7 +76,7 @@ export const ConsultasStyle = styled.div`
         transform: translateY(-10vh);
         opacity: 0.8;
         z-index: -1;
-    }
+      }
     }
   }
   & #background {

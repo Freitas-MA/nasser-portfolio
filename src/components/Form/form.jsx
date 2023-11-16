@@ -67,7 +67,6 @@ const JsFormContainer = styled.form`
     }
   }
 
-  /* .button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,7 +88,7 @@ const JsFormContainer = styled.form`
         filter: brightness(1.1);
       }
     }
-  } */
+
 
   .default {
     background-color: #ffffff9d;
@@ -150,12 +149,12 @@ const Form = () => {
     setButtonColor("default");
 
     emailjs
-      .sendForm(
-        "service_wwi1rpl",
-        "template_s98aedq",
-        form.current,
-        "7gWXP-x0bIE2F4Bkr"
-      )
+    .sendForm(
+      import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+      form.current,
+      "7gWXP-x0bIE2F4Bkr"
+    )
       .then((result) => {
         console.log(result.text);
         setButtonState("Mensagem enviada!");

@@ -3,7 +3,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function MyCarousel(props) {
   const { Photos } = props;
-  console.log(props);
   return (
     <Carousel
       showArrows={true}

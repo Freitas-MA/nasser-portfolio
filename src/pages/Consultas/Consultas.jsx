@@ -13,7 +13,6 @@ import { Background } from "../../components/index";
 export default function consultas() {
   const consultas = ConsultasMap
 
-  console.log(consultas)
 
   return (
     <ConsultasStyle>

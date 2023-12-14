@@ -4,7 +4,6 @@ import React from "react";
 
 export default function MessageSection(props) {
   const { title, text, photos } = props;
-  console.log(props.Photos);
   const paragraphs = text
     ? text
         .split("\n\n")

@@ -11,6 +11,7 @@ export const StyledConsultaItem = styled.div`
   width: 100vw;
   min-height: 95vh;
   padding-top: 0vh;
+  padding-bottom: 5vh;
 
   & > section {
     display: flex;

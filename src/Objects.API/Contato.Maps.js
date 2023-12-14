@@ -4,7 +4,7 @@ export const contatoProfile = {
     message2: 'Ou preecha o formulário abaixo:',
     descriptionForm: 'E será contactado/a o mais rápido possível:',
     email: 'beatrizfreitas@gmail.com',
-    telefone: '+351 910 000 000',
+    telefone: '+351 911 114 853',
     instagram: 'https://www.instagram.com/beatrizfreitas/',
     facebook: 'https://www.facebook.com/beatrizfreitas/',
     

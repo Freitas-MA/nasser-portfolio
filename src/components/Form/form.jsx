@@ -143,7 +143,6 @@ const Form = () => {
     setButtonState("Enviando...");
     setButtonColor("default");
 
-    console.log('Formulario', form);
 
     emailjs
     .sendForm(

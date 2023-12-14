@@ -148,7 +148,7 @@ const Form = () => {
       import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
       import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
       form.current,
-      "7gWXP-x0bIE2F4Bkr"
+      "0mytaTONO_sifA0b0"
     )
       .then((result) => {
         console.log(result.text);

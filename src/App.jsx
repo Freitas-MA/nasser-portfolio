@@ -6,8 +6,7 @@ import Footer from "./components/Footer/Footer";
 import Cookies from "./components/Cookies/Cookies";
 // Router component
 import { Outlet } from "react-router-dom";
-// Vercel Analytics and Speed Insights
-import { SpeedInsights } from "@vercel/speed-insights/react";
+// Vercel Analytics
 import { Analytics } from "@vercel/analytics/react";
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
         <Outlet />
         <Cookies />
         <Footer />
-        <SpeedInsights />
         <Analytics />
       </ThemeProvider>
     </>

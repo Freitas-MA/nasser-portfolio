@@ -12,13 +12,19 @@ This project is located in `D:\nasser` and contains the following files:
 
 This project uses the following dependencies:
 
+- `@splidejs/splide`: A lightweight and flexible slider/carousel library.
+- `@vercel/analytics`: A package for adding analytics to your Vercel projects.
+- `emailjs`: A library for sending emails using JavaScript.
+- `emailjs-com`: A library for sending emails using JavaScript (alternative version).
+- `framer-motion`: A production-ready motion library for React.
 - `react`: A JavaScript library for building user interfaces.
 - `react-dom`: A package that provides DOM-specific methods for React.
-- `vite`: A build tool that provides fast development server and optimized production build.
-- `@vitejs/plugin-react`: A Vite plugin that enables React support with Babel for Fast Refresh.
-- `@vitejs/plugin-react-swc`: A Vite plugin that enables React support with SWC for Fast Refresh.
-- `react-social-icons`: A package that provides social media icons as React components.
+- `react-icons`: A library that provides a set of icons for React.
+- `react-responsive-carousel`: A carousel component for React.
+- `react-router-dom`: A library for routing in React applications.
 - `react-simple-typewriter`: A package that provides a typewriter effect as a React component.
+- `react-social-icons`: A package that provides social media icons as React components.
+- `styled-components`: A library for styling React components.
 
 ### Usage
 
@@ -34,20 +40,19 @@ To use this project, follow these steps:
 
 - The `react-social-icons` package is used to display social media icons. To use it, import the `SocialIcon` component from the package and pass the desired URL as a prop.
 - The `react-simple-typewriter` package is used to create a typewriter effect. To use it, import the `Typewriter` component from the package and pass the desired text as a prop.
-# React + Vite
+- The `styled-components` library is used for styling React components. You can define styled components using the `styled` function provided by the library.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Scripts
 
-Currently, two official plugins are available:
+This project includes the following scripts:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `dev`: Starts the development server.
+- `build`: Builds the project for production.
+- `lint`: Runs ESLint to check for code quality issues.
+- `preview`: Starts a preview server to preview the built project.
 
+For more information on how to use these scripts, refer to the [Vite documentation](https://vitejs.dev/).
 
-I'm going to use Social Icons, I'm pointing here to do not forget about this...
-I need to import like 
-import { SocialIcon } from 'react-social-icons';
-Then I need to use the <SocialIcon url='https://twitter.com/test'/>
-This is a self closed component that render the rigth icon for the passed URL...
+### License
 
-I'm also going to use react-simple-typewriter to make a good typografy
+This project is licensed under the [MIT License](LICENSE).

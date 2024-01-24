@@ -56,3 +56,6 @@ For more information on how to use these scripts, refer to the [Vite documentati
 ### License
 
 This project is licensed under the [MIT License](LICENSE).
+
+
+### next step, change the portal to nextJS

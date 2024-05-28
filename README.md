@@ -45,11 +45,12 @@ To use this project, follow these steps:
 ### Scripts
 
 This project includes the following scripts:
-
-- `dev`: Starts the development server.
-- `build`: Builds the project for production.
-- `lint`: Runs ESLint to check for code quality issues.
-- `preview`: Starts a preview server to preview the built project.
+```
+`npm run dev`: Inicia o servidor de desenvolvimento.
+`npm run build`: Constrói o projeto para produção.
+`npm run lint`: Executa o ESLint para verificar problemas de qualidade do código.
+`npm run preview`: Inicia um servidor de visualização para visualizar o projeto construído.
+```
 
 For more information on how to use these scripts, refer to the [Vite documentation](https://vitejs.dev/).
 

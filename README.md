@@ -1,6 +1,6 @@
 
 # Nasser's Portfolio
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/Freitas-MA/nasser-porfolio/blob/main/LICENSE.md) 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/Freitas-MA/nasser-portfolio/blob/main/LICENSE.md) 
 
 ## Overview
 

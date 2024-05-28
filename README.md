@@ -1,16 +1,23 @@
-## Project Documentation
+## Nasser's Portfolio
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/Freitas-MA/the_barback/blob/main/LICENSE.md) 
 
-This project is located in `D:\nasser` and contains the following files:
+### Overview
 
-- `README.md`: This file provides an overview of the project and its dependencies.
-- `index.html`: The main HTML file that loads the React app.
-- `index.jsx`: The entry point for the React app.
-- `App.jsx`: The main component of the React app.
-- `styles.jsx`: To main style Styled-Components is used to build interactive CSS styles.
+This project is a personal portfolio website built using React, a popular JavaScript library for building user interfaces. The project is located in the `nasser-portfolio` repository on GitHub and can be accessed at [https://space-nasser.vercel.app/](https://space-nasser.vercel.app/).
+
+### Project Structure
+
+The project is structured using the Vite build tool and follows a standard React project layout. The main files and directories are:
+
+- `pages`: This directory contains the main pages of the website, including the index page (`index.jsx`) and other pages such as about, projects, and contact.
+- `components`: This directory contains reusable React components used throughout the website.
+- `styles`: This directory contains CSS styles for the website, using the `styled-components` library.
+- `public`: This directory contains static assets such as images and fonts.
+- `package.json`: This file contains project dependencies and scripts.
 
 ### Dependencies
 
-This project uses the following dependencies:
+The project uses the following dependencies:
 
 - `@splidejs/splide`: A lightweight and flexible slider/carousel library.
 - `@vercel/analytics`: A package for adding analytics to your Vercel projects.
@@ -25,6 +32,22 @@ This project uses the following dependencies:
 - `react-simple-typewriter`: A package that provides a typewriter effect as a React component.
 - `react-social-icons`: A package that provides social media icons as React components.
 - `styled-components`: A library for styling React components.
+
+### Development Scripts
+
+This project includes the following development scripts:
+
+```
+"dev": "vite",
+"build": "vite build",
+"lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+"preview": "vite preview"
+```
+
+- `npm run dev`: Starts the development server.
+- `npm run build`: Builds the project for production.
+- `npm run lint`: Runs the ESLint linter to check for code quality issues.
+- `npm run preview`: Starts a preview server to view the built project.
 
 ### Usage
 
@@ -42,21 +65,3 @@ To use this project, follow these steps:
 - The `react-simple-typewriter` package is used to create a typewriter effect. To use it, import the `Typewriter` component from the package and pass the desired text as a prop.
 - The `styled-components` library is used for styling React components. You can define styled components using the `styled` function provided by the library.
 
-### Scripts
-
-This project includes the following scripts:
-```
-`npm run dev`: Inicia o servidor de desenvolvimento.
-`npm run build`: Constrói o projeto para produção.
-`npm run lint`: Executa o ESLint para verificar problemas de qualidade do código.
-`npm run preview`: Inicia um servidor de visualização para visualizar o projeto construído.
-```
-
-For more information on how to use these scripts, refer to the [Vite documentation](https://vitejs.dev/).
-
-### License
-
-This project is licensed under the [MIT License](LICENSE).
-
-
-### next step, change the portal to nextJS

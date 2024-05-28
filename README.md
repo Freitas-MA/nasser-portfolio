@@ -1,11 +1,12 @@
-## Nasser's Portfolio
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/Freitas-MA/the_barback/blob/main/LICENSE.md) 
 
-### Overview
+# Nasser's Portfolio
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/Freitas-MA/nasser-porfolio/blob/main/LICENSE.md) 
+
+## Overview
 
 This project is a personal portfolio website built using React, a popular JavaScript library for building user interfaces. The project is located in the `nasser-portfolio` repository on GitHub and can be accessed at [https://space-nasser.vercel.app/](https://space-nasser.vercel.app/).
 
-### Project Structure
+## Project Structure
 
 The project is structured using the Vite build tool and follows a standard React project layout. The main files and directories are:
 
@@ -15,7 +16,7 @@ The project is structured using the Vite build tool and follows a standard React
 - `public`: This directory contains static assets such as images and fonts.
 - `package.json`: This file contains project dependencies and scripts.
 
-### Dependencies
+## Dependencies
 
 The project uses the following dependencies:
 
@@ -33,23 +34,25 @@ The project uses the following dependencies:
 - `react-social-icons`: A package that provides social media icons as React components.
 - `styled-components`: A library for styling React components.
 
-### Development Scripts
+## Development Scripts
 
 This project includes the following development scripts:
 
-```
+```json
 "dev": "vite",
 "build": "vite build",
 "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
 "preview": "vite preview"
 ```
 
+```
 - `npm run dev`: Starts the development server.
 - `npm run build`: Builds the project for production.
 - `npm run lint`: Runs the ESLint linter to check for code quality issues.
 - `npm run preview`: Starts a preview server to view the built project.
+```
 
-### Usage
+## Usage
 
 To use this project, follow these steps:
 
@@ -59,9 +62,14 @@ To use this project, follow these steps:
 4. Run `npm run dev` to start the development server.
 5. Open your browser and navigate to `http://localhost:3000` to view the app.
 
-### Additional Notes
+## Additional Notes
 
 - The `react-social-icons` package is used to display social media icons. To use it, import the `SocialIcon` component from the package and pass the desired URL as a prop.
 - The `react-simple-typewriter` package is used to create a typewriter effect. To use it, import the `Typewriter` component from the package and pass the desired text as a prop.
 - The `styled-components` library is used for styling React components. You can define styled components using the `styled` function provided by the library.
 
+## Author
+
+Marcos Alves Freitas
+
+[https://www.linkedin.com/in/freitas-marcos](https://www.linkedin.com/in/freitas-marcos)

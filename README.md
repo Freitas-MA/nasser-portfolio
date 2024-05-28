@@ -4,7 +4,7 @@
 
 ## Overview
 
-This project is a personal portfolio website built using React, a popular JavaScript library for building user interfaces. The project is located in the `nasser-portfolio` repository on GitHub and can be accessed at:
+This project is a personal portfolio website built using React, a popular JavaScript library for building user interfaces. The project is located in the nasser-portfolio repository on GitHub and can be accessed at:
 
 [https://space-nasser.vercel.app/](https://space-nasser.vercel.app/).
 
